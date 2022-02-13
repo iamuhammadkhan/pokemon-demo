@@ -7,12 +7,14 @@
 
 import UIKit
 import SnapKit
+import FittedSheets
 
 final class PokemonHomeViewController: UIViewController {
 
     private let userNameLabel: UILabel = {
         let label = UILabel()
         label.text = AppConstants.Strings.userName
+        label.font = UIFont.applyCommonAppFonts(20)
         return label
     }()
     
@@ -42,9 +44,9 @@ final class PokemonHomeViewController: UIViewController {
         let button = UIButton()
         button.setTitle(AppConstants.Strings.pokemonListButton, for: .normal)
         button.setTitleColor(AppConstants.Colors.appBlack, for: .normal)
-        button.layer.borderWidth = 1
+        button.titleLabel?.font = UIFont.applyCommonAppFonts(12, .bold)
+        button.applyBorder(color: AppConstants.Colors.appBlack)
         button.layer.cornerRadius = 8
-        button.layer.borderColor = AppConstants.Colors.appBlack.cgColor
         return button
     }()
     
@@ -52,9 +54,9 @@ final class PokemonHomeViewController: UIViewController {
         let button = UIButton()
         button.setTitle(AppConstants.Strings.selectedPokemonsButton, for: .normal)
         button.setTitleColor(AppConstants.Colors.appBlack, for: .normal)
-        button.layer.borderWidth = 1
+        button.titleLabel?.font = UIFont.applyCommonAppFonts(12, .bold)
+        button.applyBorder(color: AppConstants.Colors.appBlack)
         button.layer.cornerRadius = 8
-        button.layer.borderColor = AppConstants.Colors.appBlack.cgColor
         return button
     }()
     
@@ -153,7 +155,21 @@ final class PokemonHomeViewController: UIViewController {
     }
     
     @objc private func showSelectedPokemons() {
-        ///
+        var sheetOptions = SheetOptions()
+        sheetOptions.shrinkPresentingViewController = false
+        sheetOptions.setIntrinsicHeightOnNavigationControllers = true
+        sheetOptions.pullBarHeight = 50
+        let vc = SelectedPokemonsViewController()
+        let sheet = SheetViewController(controller: vc, sizes: [.fixed(view.frame.height / 1.28)], options: sheetOptions)
+        sheet.cornerRadius = 20
+        sheet.overlayColor = AppConstants.Colors.appBlack.withAlphaComponent(0.01)
+        sheet.contentViewController.view.layer.shadowColor = AppConstants.Colors.appBlack.cgColor
+        sheet.contentViewController.view.layer.shadowOpacity = 0.1
+        sheet.contentViewController.view.layer.shadowRadius = 12
+        sheet.gripColor = AppConstants.Colors.appLightGrey
+        sheet.gripSize = CGSize(width: 68, height: 8)
+        sheet.minimumSpaceAbovePullBar = 100
+        present(sheet, animated: true, completion: nil)
     }
 }
 

@@ -33,6 +33,7 @@ struct AppConstants {
         static let selectedPokemonsButton = "Selected Pokemons"
         static let selectedPokemonsTitle = "Selected pokemons"
         static let pokemonListPageTitle = "Pokemon List"
+        static let selectionTickImage = "tick"
         static let searchTitle = "Search"
     }
 }

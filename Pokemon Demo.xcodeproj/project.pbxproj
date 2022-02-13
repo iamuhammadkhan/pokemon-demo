@@ -27,6 +27,10 @@
 		3ED97CA627B5A9C600A49FE0 /* PokemonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97CA527B5A9C600A49FE0 /* PokemonListViewController.swift */; };
 		3ED97CA927B5C4F700A49FE0 /* PokemonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97CA827B5C4F700A49FE0 /* PokemonListTableViewCell.swift */; };
 		3ED97CAC27B6B84A00A49FE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97CAB27B6B84A00A49FE0 /* AppConstants.swift */; };
+		3ED97CAE27B9402A00A49FE0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97CAD27B9402A00A49FE0 /* UIView+Extension.swift */; };
+		3ED97CB027B947DB00A49FE0 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97CAF27B947DB00A49FE0 /* UIFont+Extension.swift */; };
+		3ED97CB327B95BB800A49FE0 /* SelectedPokemonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97CB227B95BB800A49FE0 /* SelectedPokemonsViewController.swift */; };
+		3ED97CB627B96F1900A49FE0 /* SelectedPokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97CB527B96F1900A49FE0 /* SelectedPokemonCollectionViewCell.swift */; };
 		853873C3E00075D471BAF0B5 /* Pods_Pokemon_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771AA3D4D9C2570A8AB6CFAB /* Pods_Pokemon_DemoTests.framework */; };
 		B0976A6A0EFF8096F49BFF20 /* Pods_Pokemon_Demo_Pokemon_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9024D38B61F24A6583FA72D /* Pods_Pokemon_Demo_Pokemon_DemoUITests.framework */; };
 		F1C6EEEE274A0D2D993569C4 /* Pods_Pokemon_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AD9EFD5CB091117D10CEB1 /* Pods_Pokemon_Demo.framework */; };
@@ -75,6 +79,10 @@
 		3ED97CA527B5A9C600A49FE0 /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
 		3ED97CA827B5C4F700A49FE0 /* PokemonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListTableViewCell.swift; sourceTree = "<group>"; };
 		3ED97CAB27B6B84A00A49FE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		3ED97CAD27B9402A00A49FE0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3ED97CAF27B947DB00A49FE0 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		3ED97CB227B95BB800A49FE0 /* SelectedPokemonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPokemonsViewController.swift; sourceTree = "<group>"; };
+		3ED97CB527B96F1900A49FE0 /* SelectedPokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		65AD9EFD5CB091117D10CEB1 /* Pods_Pokemon_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokemon_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		771AA3D4D9C2570A8AB6CFAB /* Pods_Pokemon_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokemon_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9004E4AC7DD90C2FA8E9D32B /* Pods-Pokemon Demo-Pokemon DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemon Demo-Pokemon DemoUITests.release.xcconfig"; path = "Target Support Files/Pods-Pokemon Demo-Pokemon DemoUITests/Pods-Pokemon Demo-Pokemon DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 		3ED97C5827B5096700A49FE0 /* Pokemon Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3ED97CB127B95B9A00A49FE0 /* SelectedPokemons */,
 				3ED97CAA27B6B83400A49FE0 /* AppConstants */,
 				3ED97C9E27B5607400A49FE0 /* DataSources */,
 				3ED97C9127B50D6100A49FE0 /* Pokemon List */,
@@ -212,6 +221,8 @@
 				3ED97C9827B55EEF00A49FE0 /* UITableView+Extension.swift */,
 				3ED97C9A27B55F9B00A49FE0 /* UIViewController+Extension.swift */,
 				3ED97C9C27B55FC000A49FE0 /* UIScrollView+Extension.swift */,
+				3ED97CAD27B9402A00A49FE0 /* UIView+Extension.swift */,
+				3ED97CAF27B947DB00A49FE0 /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 		3ED97C9127B50D6100A49FE0 /* Pokemon List */ = {
 			isa = PBXGroup;
 			children = (
+				3ED97CB727B976FE00A49FE0 /* Models */,
 				3ED97CA727B5C4C000A49FE0 /* Cells */,
 				3ED97CA527B5A9C600A49FE0 /* PokemonListViewController.swift */,
 			);
@@ -274,6 +286,30 @@
 			path = AppConstants;
 			sourceTree = "<group>";
 		};
+		3ED97CB127B95B9A00A49FE0 /* SelectedPokemons */ = {
+			isa = PBXGroup;
+			children = (
+				3ED97CB427B96EEB00A49FE0 /* Cells */,
+				3ED97CB227B95BB800A49FE0 /* SelectedPokemonsViewController.swift */,
+			);
+			path = SelectedPokemons;
+			sourceTree = "<group>";
+		};
+		3ED97CB427B96EEB00A49FE0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3ED97CB527B96F1900A49FE0 /* SelectedPokemonCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3ED97CB727B976FE00A49FE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DC5E98A21F1D3F4A3E7A6AF1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +320,6 @@
 				E56030CD0CA0AE86D4BA0FCC /* Pods-Pokemon DemoTests.debug.xcconfig */,
 				E538BDEB3840D472652DEC6A /* Pods-Pokemon DemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -385,7 +420,7 @@
 			);
 			mainGroup = 3ED97C4D27B5096700A49FE0;
 			packageReferences = (
-				3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+				3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 3ED97C5727B5096700A49FE0 /* Products */;
 			projectDirPath = "";
@@ -535,16 +570,20 @@
 				3ED97C9B27B55F9B00A49FE0 /* UIViewController+Extension.swift in Sources */,
 				3ED97CA627B5A9C600A49FE0 /* PokemonListViewController.swift in Sources */,
 				3ED97CA427B5760A00A49FE0 /* CollectionViewDataSource.swift in Sources */,
+				3ED97CAE27B9402A00A49FE0 /* UIView+Extension.swift in Sources */,
 				3ED97C9327B55D0200A49FE0 /* UICollectionView+Extension.swift in Sources */,
 				3ED97C9727B55EB700A49FE0 /* UITableViewCell+Extension.swift in Sources */,
 				3ED97C9927B55EEF00A49FE0 /* UITableView+Extension.swift in Sources */,
 				3ED97C9D27B55FC000A49FE0 /* UIScrollView+Extension.swift in Sources */,
 				3ED97CA927B5C4F700A49FE0 /* PokemonListTableViewCell.swift in Sources */,
 				3ED97C5E27B5096700A49FE0 /* PokemonHomeViewController.swift in Sources */,
+				3ED97CB327B95BB800A49FE0 /* SelectedPokemonsViewController.swift in Sources */,
 				3ED97CA127B5609200A49FE0 /* TableViewDataSource.swift in Sources */,
 				3ED97C5A27B5096700A49FE0 /* AppDelegate.swift in Sources */,
+				3ED97CB627B96F1900A49FE0 /* SelectedPokemonCollectionViewCell.swift in Sources */,
 				3ED97CAC27B6B84A00A49FE0 /* AppConstants.swift in Sources */,
 				3ED97C9527B55D3400A49FE0 /* UICollectionViewCell+Extension.swift in Sources */,
+				3ED97CB027B947DB00A49FE0 /* UIFont+Extension.swift in Sources */,
 				3ED97C5C27B5096700A49FE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -887,7 +926,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+		3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -900,7 +939,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		3ED97C8A27B50AC000A49FE0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			package = 3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

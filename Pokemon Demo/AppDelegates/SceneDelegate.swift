@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        window?.overrideUserInterfaceStyle = .light
         changeTheRoot(session: session, connectionOptions: connectionOptions)
         guard let _ = (scene as? UIWindowScene) else { return }
     }
@@ -30,8 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootVC = PokemonHomeViewController()
         let rootNC = UINavigationController(rootViewController: rootVC)
         let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
-        self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = rootNC
-        self.window?.makeKeyAndVisible()
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = rootNC
+        window?.makeKeyAndVisible()
     }
 }
