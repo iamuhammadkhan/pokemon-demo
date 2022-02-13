@@ -47,6 +47,7 @@ final class SelectedPokemonsViewController: UIViewController {
         setupSearchBar()
         setupPageTitleLabel()
         setupCollectionView()
+        print(LocalDataManager.getLocalSavedData())
     }
     
     private func setupSearchBar() {
@@ -81,11 +82,12 @@ final class SelectedPokemonsViewController: UIViewController {
 
 extension SelectedPokemonsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return LocalDataManager.getLocalSavedData().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: SelectedPokemonCollectionViewCell = collectionView.dequeReusableCell(for: indexPath)
+        cell.configure(with: LocalDataManager.getLocalSavedData()[indexPath.row])
         return cell
     }
     

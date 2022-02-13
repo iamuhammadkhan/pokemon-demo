@@ -20,7 +20,7 @@ final class PokemonHomeViewController: UIViewController {
     
     private let userAvatar: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: AppConstants.Strings.userAvatar)
+        iv.image = UIImage(named: AppConstants.Images.userAvatar)
         iv.contentMode = .scaleAspectFit
         iv.layer.masksToBounds = true
         iv.layer.cornerRadius = 16

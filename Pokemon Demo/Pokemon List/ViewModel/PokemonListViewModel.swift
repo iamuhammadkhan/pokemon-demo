@@ -13,6 +13,7 @@ protocol PokemonListViewModelDelegate: AnyObject {
 
 final class PokemonListViewModel {
     private lazy var pokemons: [PokemonList] = []
+    private lazy var selectedPokemons: [PokemonList] = []
     private weak var delegate: PokemonListViewModelDelegate?
     
     init(_ delegate: PokemonListViewModelDelegate) {
@@ -51,5 +52,17 @@ final class PokemonListViewModel {
     
     func getPokemon(index: Int) -> PokemonList? {
         return pokemons[index]
+    }
+    
+    func updateSelectedPokemons(_ pokemon: PokemonList, append: Bool) {
+        if append {
+            selectedPokemons.append(pokemon)
+        } else if let index = selectedPokemons.firstIndex(of: pokemon) {
+            selectedPokemons.remove(at: index)
+        }
+    }
+    
+    func saveSelectedPokemons() {
+        LocalDataManager.saveData(selectedPokemons)
     }
 }

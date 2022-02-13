@@ -138,11 +138,11 @@ final class PokemonListTableViewCell: UITableViewCell {
     
     private func setupSelectedState(_ selected: Bool) {
         selectionImageContainer.applyBorder(color: selected ? AppConstants.Colors.appGreen : AppConstants.Colors.appLightGreyBorder)
-        selectionImage.image = selected ? UIImage(named: AppConstants.Strings.selectionTickImage) : nil
+        selectionImage.image = selected ? UIImage(named: AppConstants.Images.selectionTickImage) : nil
     }
     
     func configure(with pokemon: PokemonList) {
-        pokemonNameLabel.text = pokemon.name
+        pokemonNameLabel.text = pokemon.name.capitalized
         if let url = URL(string: pokemon.url) {
             pokemonImage.sd_setImage(with: url)
         }

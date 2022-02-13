@@ -27,14 +27,21 @@ struct AppConstants {
     
     struct Strings {
         static let saveButton = "save"
-        static let userAvatar = "avatar"
         static let userName = "Hello World"
         static let pokemonSubTitle = "Meta • Meta"
         static let pokemonListButton = "Pokemon List"
         static let selectedPokemonsButton = "Selected Pokemons"
         static let selectedPokemonsTitle = "Selected pokemons"
         static let pokemonListPageTitle = "Pokemon List"
-        static let selectionTickImage = "tick"
         static let searchTitle = "Search"
+    }
+    
+    struct Images {
+        static let userAvatar = "avatar"
+        static let selectionTickImage = "tick"
+    }
+    
+    struct LocalKeys {
+        static let selectedPokemons = "selectedPokemons"
     }
 }

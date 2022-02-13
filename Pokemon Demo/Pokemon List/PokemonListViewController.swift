@@ -50,6 +50,7 @@ final class PokemonListViewController: UIViewController {
     }
     
     @objc private func saveTapped() {
+        viewModel?.saveSelectedPokemons()
         navigationController?.popViewController(animated: true)
     }
 }
@@ -80,6 +81,13 @@ extension PokemonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == ((viewModel?.numberOfPokemons() ?? 0) - 4) {
             viewModel?.getPokemonsData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? PokemonListTableViewCell else { return }
+        if let pokemon = viewModel?.getPokemon(index: indexPath.row) {
+            viewModel?.updateSelectedPokemons(pokemon, append: cell.isSelected)
         }
     }
 }
