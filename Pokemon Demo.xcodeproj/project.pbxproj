@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E9564B527B977980072F258 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564B427B977980072F258 /* Pokemon.swift */; };
+		3E9564B727B977C90072F258 /* PokemonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564B627B977C90072F258 /* PokemonList.swift */; };
+		3E9564BA27B979340072F258 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564B927B979340072F258 /* BaseURL.swift */; };
+		3E9564BC27B979C60072F258 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564BB27B979C60072F258 /* WebService.swift */; };
+		3E9564BE27B979F70072F258 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564BD27B979F70072F258 /* HTTPMethod.swift */; };
+		3E9564C027B97A0F0072F258 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564BF27B97A0F0072F258 /* Resource.swift */; };
 		3ED97C5A27B5096700A49FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97C5927B5096700A49FE0 /* AppDelegate.swift */; };
 		3ED97C5C27B5096700A49FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97C5B27B5096700A49FE0 /* SceneDelegate.swift */; };
 		3ED97C5E27B5096700A49FE0 /* PokemonHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97C5D27B5096700A49FE0 /* PokemonHomeViewController.swift */; };
@@ -56,6 +62,12 @@
 /* Begin PBXFileReference section */
 		2BF5FE3F69E0B33FE5831E46 /* Pods-Pokemon Demo-Pokemon DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemon Demo-Pokemon DemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Pokemon Demo-Pokemon DemoUITests/Pods-Pokemon Demo-Pokemon DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		351EDF09099CA4300C69637B /* Pods-Pokemon Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemon Demo.release.xcconfig"; path = "Target Support Files/Pods-Pokemon Demo/Pods-Pokemon Demo.release.xcconfig"; sourceTree = "<group>"; };
+		3E9564B427B977980072F258 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		3E9564B627B977C90072F258 /* PokemonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonList.swift; sourceTree = "<group>"; };
+		3E9564B927B979340072F258 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		3E9564BB27B979C60072F258 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		3E9564BD27B979F70072F258 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3E9564BF27B97A0F0072F258 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		3ED97C5627B5096700A49FE0 /* Pokemon Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED97C5927B5096700A49FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ED97C5B27B5096700A49FE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +143,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3E9564B827B9791C0072F258 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				3E9564B927B979340072F258 /* BaseURL.swift */,
+				3E9564BB27B979C60072F258 /* WebService.swift */,
+				3E9564BD27B979F70072F258 /* HTTPMethod.swift */,
+				3E9564BF27B97A0F0072F258 /* Resource.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
 		3ED97C4D27B5096700A49FE0 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +179,7 @@
 		3ED97C5827B5096700A49FE0 /* Pokemon Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3E9564B827B9791C0072F258 /* WebService */,
 				3ED97CB127B95B9A00A49FE0 /* SelectedPokemons */,
 				3ED97CAA27B6B83400A49FE0 /* AppConstants */,
 				3ED97C9E27B5607400A49FE0 /* DataSources */,
@@ -306,6 +330,8 @@
 		3ED97CB727B976FE00A49FE0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3E9564B427B977980072F258 /* Pokemon.swift */,
+				3E9564B627B977C90072F258 /* PokemonList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -567,14 +593,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9564BC27B979C60072F258 /* WebService.swift in Sources */,
 				3ED97C9B27B55F9B00A49FE0 /* UIViewController+Extension.swift in Sources */,
 				3ED97CA627B5A9C600A49FE0 /* PokemonListViewController.swift in Sources */,
+				3E9564BA27B979340072F258 /* BaseURL.swift in Sources */,
 				3ED97CA427B5760A00A49FE0 /* CollectionViewDataSource.swift in Sources */,
 				3ED97CAE27B9402A00A49FE0 /* UIView+Extension.swift in Sources */,
 				3ED97C9327B55D0200A49FE0 /* UICollectionView+Extension.swift in Sources */,
+				3E9564B527B977980072F258 /* Pokemon.swift in Sources */,
 				3ED97C9727B55EB700A49FE0 /* UITableViewCell+Extension.swift in Sources */,
+				3E9564C027B97A0F0072F258 /* Resource.swift in Sources */,
 				3ED97C9927B55EEF00A49FE0 /* UITableView+Extension.swift in Sources */,
 				3ED97C9D27B55FC000A49FE0 /* UIScrollView+Extension.swift in Sources */,
+				3E9564B727B977C90072F258 /* PokemonList.swift in Sources */,
 				3ED97CA927B5C4F700A49FE0 /* PokemonListTableViewCell.swift in Sources */,
 				3ED97C5E27B5096700A49FE0 /* PokemonHomeViewController.swift in Sources */,
 				3ED97CB327B95BB800A49FE0 /* SelectedPokemonsViewController.swift in Sources */,
@@ -583,6 +614,7 @@
 				3ED97CB627B96F1900A49FE0 /* SelectedPokemonCollectionViewCell.swift in Sources */,
 				3ED97CAC27B6B84A00A49FE0 /* AppConstants.swift in Sources */,
 				3ED97C9527B55D3400A49FE0 /* UICollectionViewCell+Extension.swift in Sources */,
+				3E9564BE27B979F70072F258 /* HTTPMethod.swift in Sources */,
 				3ED97CB027B947DB00A49FE0 /* UIFont+Extension.swift in Sources */,
 				3ED97C5C27B5096700A49FE0 /* SceneDelegate.swift in Sources */,
 			);
