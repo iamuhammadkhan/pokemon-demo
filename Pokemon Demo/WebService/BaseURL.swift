@@ -12,6 +12,6 @@ final class BaseURL {
     private static let baseUrl = "https://pokeapi.co/api/v2/"
     
     static func getPokemonsUrl(offset: Int) -> String {
-        return "\(baseUrl)?offset=\(offset)"
+        return "\(baseUrl)pokemon?offset=\(offset)"
     }
 }

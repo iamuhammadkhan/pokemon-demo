@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 final class PokemonListTableViewCell: UITableViewCell {
 
@@ -39,7 +40,6 @@ final class PokemonListTableViewCell: UITableViewCell {
     
     private let pokemonImage: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: AppConstants.Strings.userAvatar)
         iv.backgroundColor = AppConstants.Colors.appLightGrey.withAlphaComponent(0.4)
         iv.contentMode = .scaleAspectFit
         iv.layer.masksToBounds = true
@@ -63,7 +63,6 @@ final class PokemonListTableViewCell: UITableViewCell {
     
     private let pokemonNameLabel: UILabel = {
         let label = UILabel()
-        label.text = AppConstants.Strings.userName
         label.font = UIFont.applyCommonAppFonts(16, .light)
         label.numberOfLines = 0
         return label
@@ -71,7 +70,7 @@ final class PokemonListTableViewCell: UITableViewCell {
     
     private let subTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = AppConstants.Strings.userName
+        label.text = AppConstants.Strings.pokemonSubTitle
         label.font = UIFont.applyCommonAppFonts(12, .bold)
         label.numberOfLines = 0
         return label
@@ -140,5 +139,12 @@ final class PokemonListTableViewCell: UITableViewCell {
     private func setupSelectedState(_ selected: Bool) {
         selectionImageContainer.applyBorder(color: selected ? AppConstants.Colors.appGreen : AppConstants.Colors.appLightGreyBorder)
         selectionImage.image = selected ? UIImage(named: AppConstants.Strings.selectionTickImage) : nil
+    }
+    
+    func configure(with pokemon: PokemonList) {
+        pokemonNameLabel.text = pokemon.name
+        if let url = URL(string: pokemon.url) {
+            pokemonImage.sd_setImage(with: url)
+        }
     }
 }

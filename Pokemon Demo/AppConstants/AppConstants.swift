@@ -29,6 +29,7 @@ struct AppConstants {
         static let saveButton = "save"
         static let userAvatar = "avatar"
         static let userName = "Hello World"
+        static let pokemonSubTitle = "Meta • Meta"
         static let pokemonListButton = "Pokemon List"
         static let selectedPokemonsButton = "Selected Pokemons"
         static let selectedPokemonsTitle = "Selected pokemons"

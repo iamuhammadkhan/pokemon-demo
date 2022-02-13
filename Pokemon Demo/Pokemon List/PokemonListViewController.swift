@@ -9,9 +9,7 @@ import UIKit
 import SnapKit
 
 final class PokemonListViewController: UIViewController {
-    
-//    private var lastContentOffset: CGFloat = 0
-    
+        
     private let tableView: UITableView = {
         let tv = UITableView()
         tv.separatorStyle = .none
@@ -19,6 +17,8 @@ final class PokemonListViewController: UIViewController {
         tv.allowsMultipleSelection = true
         return tv
     }()
+    
+    private lazy var viewModel: PokemonListViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,8 @@ final class PokemonListViewController: UIViewController {
         view.backgroundColor = AppConstants.Colors.appWhite
         setupNavBar()
         setupTableView()
+        viewModel = PokemonListViewModel(self)
+        viewModel?.getPokemonsData()
     }
     
     private func setupNavBar() {
@@ -54,12 +56,14 @@ final class PokemonListViewController: UIViewController {
 
 extension PokemonListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return viewModel?.numberOfPokemons() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PokemonListTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        
+        if let pokemon = viewModel?.getPokemon(index: indexPath.row) {
+            cell.configure(with: pokemon)
+        }
         return cell
     }
 }
@@ -73,20 +77,15 @@ extension PokemonListViewController: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
-//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-//        self.lastContentOffset = scrollView.contentOffset.y
-//    }
-//
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if self.lastContentOffset < scrollView.contentOffset.y {
-//            // did move up
-//            print("did move up")
-//        } else if self.lastContentOffset > scrollView.contentOffset.y {
-//            // did move down
-//            print("did move down")
-//        } else {
-//            // didn't move
-//            print("didn't move")
-//        }
-//    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == ((viewModel?.numberOfPokemons() ?? 0) - 4) {
+            viewModel?.getPokemonsData()
+        }
+    }
+}
+
+extension PokemonListViewController: PokemonListViewModelDelegate {
+    func dataFetched() {
+        tableView.reloadData()
+    }
 }

@@ -13,6 +13,8 @@
 		3E9564BC27B979C60072F258 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564BB27B979C60072F258 /* WebService.swift */; };
 		3E9564BE27B979F70072F258 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564BD27B979F70072F258 /* HTTPMethod.swift */; };
 		3E9564C027B97A0F0072F258 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564BF27B97A0F0072F258 /* Resource.swift */; };
+		3E9564C327B97A700072F258 /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9564C227B97A700072F258 /* PokemonListViewModel.swift */; };
+		3E9564C627B97EBB0072F258 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E9564C527B97EBB0072F258 /* SDWebImage */; };
 		3ED97C5A27B5096700A49FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97C5927B5096700A49FE0 /* AppDelegate.swift */; };
 		3ED97C5C27B5096700A49FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97C5B27B5096700A49FE0 /* SceneDelegate.swift */; };
 		3ED97C5E27B5096700A49FE0 /* PokemonHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED97C5D27B5096700A49FE0 /* PokemonHomeViewController.swift */; };
@@ -68,6 +70,7 @@
 		3E9564BB27B979C60072F258 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		3E9564BD27B979F70072F258 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3E9564BF27B97A0F0072F258 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		3E9564C227B97A700072F258 /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
 		3ED97C5627B5096700A49FE0 /* Pokemon Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED97C5927B5096700A49FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ED97C5B27B5096700A49FE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9564C627B97EBB0072F258 /* SDWebImage in Frameworks */,
 				3ED97C8B27B50AC000A49FE0 /* SnapKit in Frameworks */,
 				F1C6EEEE274A0D2D993569C4 /* Pods_Pokemon_Demo.framework in Frameworks */,
 			);
@@ -152,6 +156,14 @@
 				3E9564BF27B97A0F0072F258 /* Resource.swift */,
 			);
 			path = WebService;
+			sourceTree = "<group>";
+		};
+		3E9564C127B97A560072F258 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3E9564C227B97A700072F258 /* PokemonListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3ED97C4D27B5096700A49FE0 = {
@@ -262,6 +274,7 @@
 		3ED97C9127B50D6100A49FE0 /* Pokemon List */ = {
 			isa = PBXGroup;
 			children = (
+				3E9564C127B97A560072F258 /* ViewModel */,
 				3ED97CB727B976FE00A49FE0 /* Models */,
 				3ED97CA727B5C4C000A49FE0 /* Cells */,
 				3ED97CA527B5A9C600A49FE0 /* PokemonListViewController.swift */,
@@ -369,6 +382,7 @@
 			name = "Pokemon Demo";
 			packageProductDependencies = (
 				3ED97C8A27B50AC000A49FE0 /* SnapKit */,
+				3E9564C527B97EBB0072F258 /* SDWebImage */,
 			);
 			productName = "Pokemon Demo";
 			productReference = 3ED97C5627B5096700A49FE0 /* Pokemon Demo.app */;
@@ -447,6 +461,7 @@
 			mainGroup = 3ED97C4D27B5096700A49FE0;
 			packageReferences = (
 				3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3E9564C427B97EBB0072F258 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 3ED97C5727B5096700A49FE0 /* Products */;
 			projectDirPath = "";
@@ -616,6 +631,7 @@
 				3ED97C9527B55D3400A49FE0 /* UICollectionViewCell+Extension.swift in Sources */,
 				3E9564BE27B979F70072F258 /* HTTPMethod.swift in Sources */,
 				3ED97CB027B947DB00A49FE0 /* UIFont+Extension.swift in Sources */,
+				3E9564C327B97A700072F258 /* PokemonListViewModel.swift in Sources */,
 				3ED97C5C27B5096700A49FE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -958,6 +974,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3E9564C427B97EBB0072F258 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -969,6 +993,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3E9564C527B97EBB0072F258 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E9564C427B97EBB0072F258 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		3ED97C8A27B50AC000A49FE0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3ED97C8927B50AC000A49FE0 /* XCRemoteSwiftPackageReference "SnapKit" */;
